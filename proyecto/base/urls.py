@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
-from .views import ListaPendientes
+from .views import ListaPendientes, DetalleTarea
 
-urlpatterns = [path('', ListaPendientes.as_view(), name='Pendientes')]
+
+urlpatterns = [path('', ListaPendientes.as_view(), name='Pendientes'),
+               path('tarea/<int:pk>', DetalleTarea.as_view(), name='Tareas')]
